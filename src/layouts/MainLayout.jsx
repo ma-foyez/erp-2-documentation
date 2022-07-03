@@ -25,10 +25,10 @@ const MainLayout = ({ children, title = null }) => {
     return (
         <React.Fragment>
             <div className="main_layout">
-                <div className="layout_sidebar">
+                <div className={isToggle === false ? "layout_sidebar toggle_sidebar" : "layout_sidebar"}>
                     <SidebarMenu />
                 </div>
-                <div className="layout_container">
+                <div className={isToggle === false ? "layout_container toggle_container" : "layout_container"}>
                     <div className="layout_header">
                         <Header />
                     </div>
