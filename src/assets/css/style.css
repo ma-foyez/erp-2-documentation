@@ -195,18 +195,18 @@ a {
 }
 .module_serial::after {
   content: "";
-  width: 120px;
+  width: 200px;
   height: 4px;
   position: absolute;
   background-color: var(--color-primary-deep);
 }
 .module-sl-1::after,
 .module-sl-3::after {
-  right: -125px;
+  right: -202px;
 }
 .module-sl-2::after,
 .module-sl-4::after {
-  left: -125px;
+  left: -202px;
 }
 .module-sl-2,
 .module-sl-4 {
