@@ -1,0 +1,222 @@
+:root {
+    --color-primary: #1f2278;
+    --color-info: #0091c3;
+    --color-warning: #f17732;
+    --color-white: #ffffff;
+  
+    --bs-body-font-family: Montserrat, sans-serif;
+    --bs-body-font-size: 1rem;
+    --bs-body-font-weight: 500;
+    --bs-body-line-height: 1.5;
+    --bs-body-color: #ffff;
+    --bs-body-bg: #f5f5fc;
+  }
+  
+  body {
+    margin: 0;
+    font-family: var(--bs-body-font-family);
+    font-size: var(--bs-body-font-size);
+    font-weight: var(--bs-body-font-weight);
+    line-height: var(--bs-body-line-height);
+    color: var(--bs-body-color);
+    text-align: var(--bs-body-text-align);
+    background-color: var(--bs-body-bg);
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    overflow-y: scroll !important;
+  }
+  
+  /******************************************************************
+                          Dahshboard Layout CSS
+  *******************************************************************/
+  .dash_layout {
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+  }
+  
+  .dash_sidebar {
+    height: 100vh;
+    background-color: var(--color-white);
+    border-right: 1px solid var(--color-info);
+    box-shadow: -18px 19px 20px 16px rgb(0 160 215 / 56%);
+    position: absolute;
+    left: 0;
+    top: 0;
+    transition: 0.5s ease;
+    z-index: 9999;
+  }
+  .dash_sidebar.navbar_toggle {
+    width: 300px;
+  }
+  
+  .dash_sidebar.IsNot_navbar_toggle {
+    width: 80px;
+  }
+  
+  .dash_sidebar .sidebar_inner {
+    position: relative !important;
+  }
+  .dash_sidebar .sidebar_inner .toggle_btn {
+    height: 30px;
+    width: 30px;
+    border: 1px solid var(--color-info);
+    border-radius: 50%;
+    text-align: center;
+    cursor: pointer;
+    position: absolute;
+    right: -15px;
+    top: 15px;
+    z-index: 9999;
+    background-color: var(--color-white);
+    -webkit-box-shadow: 3px 0px 12px -3px rgba(0, 145, 195, 1);
+    -moz-box-shadow: 3px 0px 12px -3px rgba(0, 145, 195, 1);
+    box-shadow: 3px 0px 12px -3px rgba(0, 145, 195, 1);
+  }
+  .dash_container {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+    width: 100%;
+  }
+  .dash_container.dash_content_toggle {
+    left: 300px;
+    width: 85%;
+  }
+  .dash_container.isNot_dash_content_toggle {
+    left: 80px;
+  }
+  
+  .dash_container .navbar_top .navbar_top_inner {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 10px;
+    background-color: var(--bs-body-bg);
+    box-shadow: 0 0 50px 0 rgb(0 160 215 / 35%);
+    border-bottom: 1px solid #00a0d7;
+    z-index: 999;
+  }
+  .dash_container .dash_footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding-top: 5px;
+    background-color: var(--bs-body-bg);
+    box-shadow: 0 0 50px 0 rgb(0 160 215 / 35%);
+    z-index: 9999;
+  }
+  
+  .dash_content_inner {
+    padding-top: 80px;
+    padding-bottom: 80px;
+    padding-left: 30px;
+    padding-right: 120px;
+    height: 100%;
+    overflow: auto;
+  }
+  .sidebar_nav .sidebar_logo {
+    padding: 20px;
+    text-align: center;
+    background-color: #e3e3e3;
+    box-shadow: 3px 0px 12px -3px rgba(0, 145, 195, 1);
+  }
+  
+  .sidebar_nav .sidebar_logo img {
+    width: 180px;
+  }
+  
+  .sidebar_menu {
+    padding: 30px;
+  }
+  .sidebar_menu ul li {
+    margin-top: 20px;
+  }
+  .sidebar_menu ul li a {
+    transition: 0.5s ease;
+  }
+  .sidebar_menu ul li a:hover {
+    color: #f17732;
+  }
+  .sidebar_menu ul li a:hover i {
+    background: #f17732;
+  }
+  .sidebar_menu ul li i {
+    height: 30px;
+    width: 30px;
+    background-color: #0091c3;
+    border-radius: 50%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffff;
+    margin-right: 15px;
+    font-size: 1rem;
+    transition: 0.5s ease-in;
+  }
+  
+  /******************************************************************
+                          Dahshboard Layout CSS Close
+  *******************************************************************/
+  
+  /******************************************************************
+                          Dahshboard Content CSS Start
+  *******************************************************************/
+  .dashboard_card_content {
+    background-color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 3px 0px 12px -3px rgb(197 197 197 / 88%);
+    width: 100%;
+    padding: 20px;
+  }
+  
+  .dashboard_card_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #00a0d7;
+    padding-bottom: 15px;
+  }
+  .dashboard_card_header h6 {
+    font-size: 1rem;
+    color: #3c3a3a;
+  }
+  
+  .react-confirm-alert-body {
+    border: 1px solid #0091c3;
+  }
+  .react-confirm-alert-body > h1 {
+    font-size: 1.4rem;
+  }
+  
+  .react-confirm-alert-button-group > button:first-child {
+    background: #0091c3;
+  }
+  .react-confirm-alert-button-group > button:last-child {
+    background: #f17732;
+  }
+  
+  /******************************************************************
+                          Dahshboard Content CSS Close
+  *******************************************************************/
+  
+  .removePreview {
+    background-color: #f17732 !important;
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    position: absolute;
+    border: 2px solid #f17732;
+    top: 30%;
+    left: -2%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+  .removePreview i {
+    color: #ffff !important;
+    font-size: 20px;
+    padding: 6px 8.5px;
+  }
+  
