@@ -15,7 +15,10 @@ body {
   margin: 0;
   padding: 0;
 }
-
+ul li{
+  list-style-type: none;
+  display: block;
+}
 /********************************************************
                 Main Layout CSS Start
 *********************************************************/
@@ -31,13 +34,13 @@ body {
   box-shadow: 0 2px 2px 0 rgb(0 0 0 / 14%), 0 3px 1px -2px rgb(0 0 0 / 20%),
     0 1px 5px 0 rgb(0 0 0 / 12%);
   background-color: var(--color-white);
-  width: 70px;
+  width: 90px;
   min-height: 100vh;
   transition: 0.5s ease;
 }
 
 .main_layout .layout_sidebar.toggle_sidebar {
-  width: 250px;
+  width: 300px;
 }
 
 .sidebar_menu {
@@ -104,6 +107,31 @@ body {
   padding-bottom: 1.5rem;
   color: var(--color-grey-light);
 }
+
+.menu-list{
+  padding-top: 1rem;
+  padding-right: 0.8rem;
+}
+.menu-list .menu_item{
+  margin-top: 0.7rem;
+  color: var(--color-gray);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.5s ease all;
+}
+.menu-list .menu_item:hover{
+  color: var(--color-primary-deep);
+}
+.sub_menu_list .subMenu_item{
+  display: none;
+}
+.menu-list .menu_item span{
+  margin-right: 10px;
+}
+
+/* .menu-list .sub_menu_list{
+} */
 /********************************************************
                 Main Layout CSS Close
 *********************************************************/

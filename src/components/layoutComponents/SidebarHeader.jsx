@@ -17,11 +17,11 @@ const SidebarHeader = ({ isToggle }) => {
                             </Dropdown.Toggle>
 
                             <Dropdown.Menu>
-                                <Dropdown.Item href="#/action-1">Profile</Dropdown.Item>
-                                <Dropdown.Item href="#/action-2">Contacts</Dropdown.Item>
-                                <Dropdown.Item href="#/action-3">Mailbox</Dropdown.Item>
+                                <Dropdown.Item href="#/">Profile</Dropdown.Item>
+                                <Dropdown.Item href="#/">Contacts</Dropdown.Item>
+                                <Dropdown.Item href="#/">Mailbox</Dropdown.Item>
                                 <Dropdown.Divider />
-                                <Dropdown.Item href="#/action-3">Logout</Dropdown.Item>
+                                <Dropdown.Item href="#/">Logout</Dropdown.Item>
                             </Dropdown.Menu>
                         </Dropdown>
                     </div> :
