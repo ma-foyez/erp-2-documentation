@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { menuList } from '../../assets/data/SidebarMenuList';
 import { handleToggleSidebarMenu } from '../../_globalRedux/Action/GlobalAction';
 import SidebarHeader from './SidebarHeader';
+import { NavLink } from "react-router-dom";
 
 const SidebarMenu = () => {
     const dispatch = useDispatch();
@@ -16,9 +17,6 @@ const SidebarMenu = () => {
     const [subMenuToggle, setSubMenuToggle] = useState(false)
     const [subSubMenuToggle, setSubSubMenuToggle] = useState(false)
 
-    const style = {
-        display: "block"
-    }
     return (
         <div className='sidebar_menu'>
             <div className="sidebar_toggle" onClick={() => dispatch(handleToggleSidebarMenu(!isToggle))}>
@@ -47,7 +45,7 @@ const SidebarMenu = () => {
                                             menu.subMenu.map((subMenu1, index1) => (
                                                 (subMenu1.subSubMenu && subMenu1.subSubMenu.length > 0) ?
                                                     <li key={index1 + 2} className="subMenu_item menu_item">
-                                                        <div className="d-flex justify-content-between align-items-center" onClick={() => subSubMenuToggle(!subSubMenuToggle)}>
+                                                        <div className="d-flex justify-content-between align-items-center" onClick={() => setSubSubMenuToggle(!subSubMenuToggle)}>
                                                             <div>
                                                                 {subMenu1.menuName}
                                                             </div>
@@ -69,9 +67,11 @@ const SidebarMenu = () => {
                                     </ul>
                                 </li> :
                                 <li key={index + 1} className="menu_item">
-                                    <div>
+                                    <NavLink to={menu.link} className={({ isActive }) =>
+              isActive ? "navLink_active" : undefined
+            }>
                                         <span><i class={menu.icon}></i></span> {menu.menuName}
-                                    </div>
+                                    </NavLink>
                                 </li>
                         ))
                     }
