@@ -8,8 +8,40 @@
   --color-primary-over-light: #b6e7dd;
 }
 
-body{
+body {
   background-color: var(--color-grey-light);
   margin: 0;
   padding: 0;
 }
+
+/********************************************************
+                Main Layout CSS Start
+*********************************************************/
+.main_layout {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+}
+.main_layout .layout_sidebar {
+  box-shadow: 0 2px 2px 0 rgb(0 0 0 / 14%), 0 3px 1px -2px rgb(0 0 0 / 20%),
+    0 1px 5px 0 rgb(0 0 0 / 12%);
+    background-color: var(--color-white);
+    width: 230px;
+    min-height: 100vh;
+}
+
+/* .main_layout .layout_container{
+
+}
+.main_layout .layout_container .layout_header{
+  
+}
+.main_layout .layout_container .layout_content{
+
+}
+.main_layout .layout_container .layout_footer{
+
+} */
+/********************************************************
+                Main Layout CSS Close
+*********************************************************/

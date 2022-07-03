@@ -1,6 +1,9 @@
-import React from 'react';
-// import { useDispatch, useSelector } from 'react-redux';
-// import { handleToggleDashSidebar } from '../_redux/Action/DashboardAction';
+import React, { useEffect } from 'react';
+import Footer from '../components/layoutComponents/Footer';
+import Header from '../components/layoutComponents/Header';
+import SidebarMenu from '../components/layoutComponents/SidebarMenu';
+import { useDispatch, useSelector } from 'react-redux';
+import { handleToggleSidebarMenu } from '../_globalRedux/Action/GlobalAction';
 
 /**
  * Page Layout
@@ -11,22 +14,34 @@ import React from 'react';
 
 const MainLayout = ({ children, title = null }) => {
 
-    // const dispatch = useDispatch();
-    // const { isToggle } = useSelector((state) => state.DashboardReducer);
-
+    const dispatch = useDispatch();
+    const { isToggle } = useSelector((state) => state.GlobalReducer);
     document.title = (title !== null && title !== undefined) ? `${title} || ERP-2` : `ERP-2`;
 
-    // useEffect(() => {
-    //     dispatch(handleToggleDashSidebar())
-    // }, [dispatch]);
+    useEffect(() => {
+        dispatch(handleToggleSidebarMenu())
+    }, [dispatch]);
 
     return (
         <React.Fragment>
-            <h2>This is dashboard</h2>
-
-            {
-                children
-            }
+            <div className="main_layout">
+                <div className="layout_sidebar">
+                    <SidebarMenu />
+                </div>
+                <div className="layout_container">
+                    <div className="layout_header">
+                        <Header />
+                    </div>
+                    <div className="layout_content">
+                        {
+                            children
+                        }
+                    </div>
+                    <div className="layout_footer">
+                        <Footer />
+                    </div>
+                </div>
+            </div>
         </React.Fragment>
     );
 };

@@ -6,7 +6,7 @@ const initialState = {
 
 const GlobalReducer = (state = initialState, action) => {
     switch (action.type) {
-        case Types.TOGGLE_NAV_POSITION:
+        case Types.TOGGLE_SIDEBAR_MENU:
             return {
                 ...state,
                 isToggle: action.payload

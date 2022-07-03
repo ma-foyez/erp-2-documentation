@@ -1,7 +1,6 @@
-import Axios from "axios";
 import * as Types from "../types/Types";
 
 /** */
-export const handleNavbarPosition = (isToggle = false) => async (dispatch) => {
-    dispatch({ type: Types.TOGGLE_NAV_POSITION, payload: isToggle });
+export const handleToggleSidebarMenu = (isToggle = false) => async (dispatch) => {
+    dispatch({ type: Types.TOGGLE_SIDEBAR_MENU, payload: isToggle });
 }
