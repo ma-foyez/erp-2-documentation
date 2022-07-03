@@ -123,13 +123,18 @@ ul li{
 .menu-list .menu_item:hover{
   color: var(--color-primary-deep);
 }
-.sub_menu_list .subMenu_item{
-  display: none;
-}
+
 .menu-list .menu_item span{
   margin-right: 10px;
 }
 
+.sub_menu_list, .sub_submenu_list{
+  display: none;
+  transition: 0.5s ease-in;
+}
+/* .sub_menu_list_open{
+  display: block;
+} */
 /* .menu-list .sub_menu_list{
 } */
 /********************************************************

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { menuList } from '../../assets/data/SidebarMenuList';
 import { handleToggleSidebarMenu } from '../../_globalRedux/Action/GlobalAction';
@@ -13,6 +13,12 @@ const SidebarMenu = () => {
     }, [dispatch]);
 
 
+    const [subMenuToggle, setSubMenuToggle] = useState(false)
+    const [subSubMenuToggle, setSubSubMenuToggle] = useState(false)
+
+    const style = {
+        display: "block"
+    }
     return (
         <div className='sidebar_menu'>
             <div className="sidebar_toggle" onClick={() => dispatch(handleToggleSidebarMenu(!isToggle))}>
@@ -25,7 +31,7 @@ const SidebarMenu = () => {
                         menuList && menuList.length > 0 && menuList.map((menu, index) => (
                             (menu.subMenu && menu.subMenu.length > 0) ?
                                 <li className='menu_item' key={index + 1}>
-                                    <div className="d-flex justify-content-between align-items-center">
+                                    <div className="d-flex justify-content-between align-items-center" onClick={() => setSubMenuToggle(!subMenuToggle)}>
                                         <div>
                                             <span><i class={menu.icon}></i></span>
                                             {menu.menuName}
@@ -34,12 +40,14 @@ const SidebarMenu = () => {
                                             <i class="fa-solid fa-angle-right"></i>
                                         </div>
                                     </div>
-                                    <ul className='sub_menu_list'>
+                                    <ul
+                                        className={subMenuToggle === true ? "sub_menu_list_open" : "sub_menu_list"}
+                                    >
                                         {
                                             menu.subMenu.map((subMenu1, index1) => (
                                                 (subMenu1.subSubMenu && subMenu1.subSubMenu.length > 0) ?
-                                                    <li key={index1 + 2} className='subMenu_item menu_item'>
-                                                        <div className="d-flex justify-content-between align-items-center">
+                                                    <li key={index1 + 2} className="subMenu_item menu_item">
+                                                        <div className="d-flex justify-content-between align-items-center" onClick={() => subSubMenuToggle(!subSubMenuToggle)}>
                                                             <div>
                                                                 {subMenu1.menuName}
                                                             </div>
@@ -47,7 +55,7 @@ const SidebarMenu = () => {
                                                                 <i class="fa-solid fa-angle-right"></i>
                                                             </div>
                                                         </div>
-                                                        <ul>
+                                                        <ul className='sub_submenu_list'>
                                                             {
                                                                 subMenu1.subSubMenu.map((submenu2, index2) => (
                                                                     <li key={index2 + 1} className="menu_item sub_submenu_item">{submenu2.menuName}</li>
