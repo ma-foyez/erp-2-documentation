@@ -174,6 +174,8 @@ a {
 .module_card img {
   width: 75%;
   height: 270px;
+  position: relative;
+  z-index: 999;
 }
 
 .module_serial {
@@ -193,18 +195,18 @@ a {
 }
 .module_serial::after {
   content: "";
-  width: 80px;
+  width: 120px;
   height: 4px;
   position: absolute;
   background-color: var(--color-primary-deep);
 }
 .module-sl-1::after,
 .module-sl-3::after {
-  right: -80px;
+  right: -125px;
 }
 .module-sl-2::after,
 .module-sl-4::after {
-  left: -80px;
+  left: -125px;
 }
 .module-sl-2,
 .module-sl-4 {
