@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { handleToggleSidebarMenu } from '../../_globalRedux/Action/GlobalAction';
+import SidebarHeader from './SidebarHeader';
 
 const SidebarMenu = () => {
     const dispatch = useDispatch();
@@ -16,6 +17,7 @@ const SidebarMenu = () => {
             <div className="sidebar_toggle" onClick={() => dispatch(handleToggleSidebarMenu(!isToggle))}>
                 <i class={isToggle === false ? "fa-solid fa-chevron-left" : "fa-solid fa-chevron-right"}></i>
             </div>
+            <SidebarHeader isToggle={isToggle} />
         </div>
     );
 };

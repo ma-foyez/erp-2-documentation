@@ -1,25 +1,35 @@
 import React from 'react';
+import { Dropdown } from 'react-bootstrap';
+import user from "../../assets/images/common/USER.png"
+import logo from "../../assets/images/common/omni-solution-logo.png"
 
-const SidebarHeader = () => {
+const SidebarHeader = ({ isToggle }) => {
     return (
-        <div>
-            <div className="dropdown profile-element">
-                <img alt="icon" className="rounded-circle img-thumbnail" src="/home/USER.png" style={{ height: '50px' }} />
-                <a data-toggle="dropdown" className="dropdown-toggle" href="/#" aria-expanded="false">
-                    <span className="block m-t-xs font-bold">OmniSolutionLtd</span>
-                    <span className="text-muted text-xs block">Art Director <b className="caret" /></span>
-                </a>
-                <ul className="dropdown-menu animated fadeInRight m-t-xs" style={{ position: 'absolute', top: '94px', left: '0px', willChange: 'top, left' }} x-placement="bottom-start">
-                    <li><a className="dropdown-item" href="/AppViews/Profile">Profile</a></li>
-                    <li><a className="dropdown-item" href="/AppViews/Contacts">Contacts</a></li>
-                    <li><a className="dropdown-item" href="/Mailbox/Inbox">Mailbox</a></li>
-                    <li className="dropdown-divider" />
-                    <li><a className="dropdown-item" href="/Account/LogOut">Logout</a></li>
-                </ul>
-            </div>
-            <div className="logo-element">
-                <img alt="icon" className="rounded-circle" src="/Images/omni-solution-logo.png" style={{ width: '40px' }} />
-            </div>
+        <div className="sidebar_header_main">
+            {
+                isToggle === false ?
+                    <div className='menu_header'>
+                        <img src={user} alt="user photos" className='rounded-circle img-thumbnail' style={{ width: "50px" }} />
+                        <h6 className='mt-2'>Omni Solutions Limited</h6>
+                        <Dropdown>
+                            <Dropdown.Toggle variant="none" id="dropdown-basic" style={{ color: "#ffff" }}>
+                                Team OMNI
+                            </Dropdown.Toggle>
+
+                            <Dropdown.Menu>
+                                <Dropdown.Item href="#/action-1">Profile</Dropdown.Item>
+                                <Dropdown.Item href="#/action-2">Contacts</Dropdown.Item>
+                                <Dropdown.Item href="#/action-3">Mailbox</Dropdown.Item>
+                                <Dropdown.Divider />
+                                <Dropdown.Item href="#/action-3">Logout</Dropdown.Item>
+                            </Dropdown.Menu>
+                        </Dropdown>
+                    </div> :
+                    <div className="menu_header">
+                        <img alt="company logo" className="rounded-circle" src={logo} style={{ width: '40px' }} />
+                    </div>
+            }
+
         </div>
     );
 };

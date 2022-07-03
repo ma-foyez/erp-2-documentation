@@ -1,5 +1,6 @@
 :root {
   --color-white: #ffffff;
+  --color-gray: #676a6c;
   --color-grey-light: #f3f3f4;
   --color-primary: #1ab394;
   --color-primary-light: #19c0a0;
@@ -10,6 +11,7 @@
 
 body {
   background-color: var(--color-grey-light);
+  color: var(--color-gray);
   margin: 0;
   padding: 0;
 }
@@ -55,21 +57,53 @@ body {
   position: absolute;
   right: -13px;
   top: 20px;
+  z-index: 999;
 }
- .main_layout .layout_container{
-  padding: 1rem;
-  background-color: #009486;
+.main_layout .layout_container {
   width: 100%;
+  position: relative;
+  z-index: 1;
 }
-/*.main_layout .layout_container .layout_header{
-  
+.main_layout .layout_container .layout_header {
+  position: absolute;
+  background-color: var(--color-white);
+  width: 100%;
+  left: 2px;
+  top: 0;
+  z-index: 99;
+  padding: 0.8rem;
 }
-.main_layout .layout_container .layout_content{
+.main_layout .layout_container .layout_content {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+.main_layout .layout_container .layout_footer {
+  position: absolute;
+  background-color: var(--color-white);
+  width: 100%;
+  left: 2px;
+  bottom: 0;
+  padding-top: 0.5rem;
+  z-index: 999;
+}
 
+/****Sidebar menu***/
+.sidebar_header_main {
+  background-image: url("./../images/common/header-bg.png");
+  background-repeat: no-repeat;
+  display: block;
+  width: 100%;
+  position: relative;
 }
-.main_layout .layout_container .layout_footer{
-
-} */
+.menu_header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  color: var(--color-grey-light);
+}
 /********************************************************
                 Main Layout CSS Close
 *********************************************************/
