@@ -40,7 +40,7 @@ const DepartmentEntry = () => {
                                                 Type department name
                                             </li>
                                             <li>
-                                                Click on <strong>Submit</strong> button to add new department
+                                                Click on the <strong>Submit</strong> button to add new department
                                             </li>
                                         </ul>
                                     </div>
