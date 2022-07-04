@@ -23,7 +23,7 @@ const SidebarMenu = () => {
                 <i class={isToggle === false ? "fa-solid fa-chevron-left" : "fa-solid fa-chevron-right"}></i>
             </div>
             <SidebarHeader isToggle={isToggle} />
-            <div className="menu-list">
+            <div className="menu-list overflow-hidden">
                 <ul>
                     {
                         menuList && menuList.length > 0 && menuList.map((menu, index) => (

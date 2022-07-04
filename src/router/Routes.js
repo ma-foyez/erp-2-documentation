@@ -3,6 +3,7 @@ import InventoryModule from "../pages/InventoryModule";
 import HRPModule from "../pages/HRPModule";
 import PageNotFound from "../pages/PageNotFound";
 import Department from "../pages/Department";
+import DepartmentEntry from "../pages/DepartmentEntry";
 
 const routes = [
   { path: "/", name: "Home", element: Home },
@@ -11,6 +12,7 @@ const routes = [
   { path: "/module/inventory-management", name: "Home", element: InventoryModule },
   { path: "/module/hrm-management", name: "Home", element: HRPModule },
   { path: "/module/inventory-management/department", name: "Home", element: Department },
+  { path: "/module/inventory-management/department-entry", name: "Home", element: DepartmentEntry },
   { path: "*", name: "Page Not Found", element: PageNotFound },
 ];
 
