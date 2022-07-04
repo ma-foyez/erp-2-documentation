@@ -43,6 +43,22 @@ const Home = () => {
                     <h2 className="fw-bold text-center text-uppercase">Modules</h2>
                     <div className="modules">
                         <div className="row justify-content-center">
+                            {/* <Link to={`/module${moduleData[0].link}`} className="col-md-6 col-sm-6 col-12">
+                                <div className="module_card">
+                                    <div className={`module_card_1`}>
+                                        <div className={`module_serial module-sl-1`}>01</div>
+                                        <img src={moduleData[0].img} alt={moduleData[0].title} />
+                                    </div>
+                                </div>
+                            </Link>
+                            <Link to={`/module${moduleData[1].link}`} className="col-md-6 col-sm-6 col-12">
+                                <div className="module_card">
+                                    <div className={`module_card_2`}>
+                                        <div className={`module_serial module-sl-2`}>02</div>
+                                        <img src={moduleData[1].img} alt={moduleData[1].title} />
+                                    </div>
+                                </div>
+                            </Link> */}
                             {
                                 moduleData.map((module, index) => (
                                     <Link to={`/module${module.link}`} className="col-md-6 col-sm-6 col-12" key={index + 1}>
@@ -50,7 +66,6 @@ const Home = () => {
                                             <div className={`module_card_${index + 1}`}>
                                                 <div className={`module_serial module-sl-${index + 1}`}>0{index + 1}</div>
                                                 <img src={module.img} alt={module.title} />
-                                                {/* <h4 className="module_title">{module.title}</h4> */}
                                             </div>
                                         </div>
                                     </Link>
