@@ -30,10 +30,10 @@ const SidebarMenu = () => {
                             (menu.subMenu && menu.subMenu.length > 0) ?
                                 <li className='menu_item' key={index + 1}>
                                     <div className="d-flex justify-content-between align-items-center" onClick={() => setSubMenuToggle(!subMenuToggle)}>
-                                        <div>
+                                        <NavLink to={menu.link}>
                                             <span><i class={menu.icon}></i></span>
                                             {menu.menuName}
-                                        </div>
+                                        </NavLink>
                                         <div>
                                             <i class="fa-solid fa-angle-right"></i>
                                         </div>
@@ -46,30 +46,41 @@ const SidebarMenu = () => {
                                                 (subMenu1.subSubMenu && subMenu1.subSubMenu.length > 0) ?
                                                     <li key={index1 + 2} className="subMenu_item menu_item">
                                                         <div className="d-flex justify-content-between align-items-center" onClick={() => setSubSubMenuToggle(!subSubMenuToggle)}>
-                                                            <div>
+                                                            <NavLink to={subMenu1.link}>
                                                                 {subMenu1.menuName}
-                                                            </div>
-                                                            <div>
+                                                            </NavLink>
+                                                            <div >
                                                                 <i class="fa-solid fa-angle-right"></i>
                                                             </div>
                                                         </div>
-                                                        <ul className='sub_submenu_list'>
+                                                        <ul
+                                                            // className='sub_submenu_list'
+                                                            className={subSubMenuToggle === true ? "sub_submenu_list_open" : "sub_submenu_list"}
+                                                        >
                                                             {
                                                                 subMenu1.subSubMenu.map((submenu2, index2) => (
-                                                                    <li key={index2 + 1} className="menu_item sub_submenu_item">{submenu2.menuName}</li>
+                                                                    <li key={index2 + 1} className="menu_item sub_submenu_item">
+                                                                        <NavLink to={submenu2.link}>
+                                                                            {submenu2.menuName}
+                                                                        </NavLink>
+                                                                    </li>
                                                                 ))
                                                             }
                                                         </ul>
                                                     </li> :
-                                                    <li className='menu_item subMenu_item'>{subMenu1.menuName}</li>
+                                                    <li className='menu_item subMenu_item'>
+                                                        <NavLink to={subMenu1.link}>
+                                                            {subMenu1.menuName}
+                                                        </NavLink>
+                                                    </li>
                                             ))
                                         }
                                     </ul>
                                 </li> :
                                 <li key={index + 1} className="menu_item">
                                     <NavLink to={menu.link} className={({ isActive }) =>
-              isActive ? "navLink_active" : undefined
-            }>
+                                        isActive ? "navLink_active" : undefined
+                                    }>
                                         <span><i class={menu.icon}></i></span> {menu.menuName}
                                     </NavLink>
                                 </li>
