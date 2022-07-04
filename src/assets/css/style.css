@@ -156,7 +156,7 @@ a {
   padding-left: 0.7rem;
   padding-right: 0.7rem;
 }
-.modules{
+.modules {
   margin-top: 2rem;
 }
 .module_card {
@@ -214,4 +214,30 @@ a {
 }
 /********************************************************
                 Getting Started Page
+*********************************************************/
+.module_features {
+  margin-top: 2rem;
+}
+.module_features h5 {
+  font-size: 2rem;
+}
+.module_features ul li {
+  font-size: 20px;
+  padding-top: 10px;
+  text-transform: capitalize;
+  position: relative;
+}
+
+.module_features ul li::before{
+  content: "";
+  background-image: url('../images/icon/share-from-square-solid.svg');
+  height: 15px;
+  width: 15px;
+  background-size: 15px 15px;
+  position: absolute;
+  left: -25px;
+  top: 20px;
+}
+/********************************************************
+                Module Page Close
 *********************************************************/
